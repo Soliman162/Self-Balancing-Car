@@ -26,13 +26,13 @@
 /**************************************************************************************/
 
 /*******************************Gero_Scope DIV_Factor Config********************************/
-#if AFS_SEL == AFS_2g
+#if FS_SEL == FS_250
     #define GERO_SCOPE_DIV_FACTOR    131.0f
-#elif AFS_SEL == AFS_4g
+#elif FS_SEL == FS_500
     #define GERO_SCOPE_DIV_FACTOR    65.5f
-#elif AFS_SEL == AFS_8g
+#elif FS_SEL == FS_1000
     #define GERO_SCOPE_DIV_FACTOR    32.8f
-#elif AFS_SEL == AFS_16g
+#elif FS_SEL == FS_2000
     #define GERO_SCOPE_DIV_FACTOR    16.4f
 #endif
 /**************************************************************************************/

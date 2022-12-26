@@ -8,8 +8,8 @@
 
 ISR(TIMER1_OVF_vect)                    // interrupt service routine for overflow
 {   
-      /*Update IMU Data*/ 
-      Update_voidIMU();
+      /*preload Timer*/
+      TCNT1 = timer_value;
       /*Get Current Angle With Compelementry Filter*/
       Current_Angle = 0.98*(Current_Angle + Get_Gero_Angle_X_Y_Z(X) *TIMER_DT ) + 0.02*(Get_ACC_2D_Angle_X());
       /*Update PID Data*/
@@ -23,8 +23,6 @@ ISR(TIMER1_OVF_vect)                    // interrupt service routine for overflo
       {
         Motor_Speed = PID_output;
       }
-      /*preload Timer*/
-      TCNT1 = timer_value;
 }
 
 void Timer_voidInit(void)
